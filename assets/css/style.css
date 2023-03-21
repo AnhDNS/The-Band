@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-size: 15px;
 }
+html{
+    font-family: Arial, Helvetica, sans-serif;  /*Chỉnh font chữ */
+}
 
 /* 
 1.Làm từ ngoài vào trong
@@ -19,17 +22,57 @@ Làm từ trên xuống dưới
 4.Kiểu dáng
  */
 
-
-
-html{
-    font-family: Arial, Helvetica, sans-serif;  /*Chỉnh font chữ */
+/* common */
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
 }
 
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-full{
+    width: 100%;
+}
+
+.col-half{
+    width: calc(100%/2);
+}
+
+.col-third{
+    width: calc(100%/3);
+}
+
+.mt-16{
+    margin-top: 16px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    background-color: black;
+    text-decoration: none; /*Bỏ gạch chân*/
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    margin-top: 15px;;
+    border: 1px solid #000;
+
+}
+
+.pull-right{
+    float: right
+}
+
+/* Main */
 #main {
-
-}
-
-.clear{
 
 }
 
@@ -71,7 +114,7 @@ html{
 
 #nav > li > a{
     color: white;
-    text-transform: uppercase;
+    text-transform: uppercase; /*Ghi hoa*/
 }
 
 
@@ -161,7 +204,7 @@ html{
 /* Begin CSS About Section  */
 #content .content-section{
     width: 800px;
-    padding: 64px 0;
+    padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.4;  /* Chỉnh độ cao 1 dòng*/
@@ -182,36 +225,31 @@ html{
     opacity: 0.6; /*Thuộc tính làm mờ chữ*/
 }
 
-#content .about-text{
+.about-text{
     font-size: 15px;
     margin-top: 25px;
     text-align: justify; /*Để căn đều 2 bên: justify*/
 }
 
-#content .member-list{
+.member-list{
     margin-top: 48px;
     overflow: hidden; /*Khắc phục tình trạng mất khoảng cách của dùng float*/
 }
 
-#content .member-item{
-    float: left; /*Kéo ảnh sang 1 hàng trái*/
-    width: calc(100%/3);
-    text-align: center;
-}
 
-#content .member-name{
+.member-name{
     font-size: 15px;
     margin: 15px 0;
 }
 
-#content .member-img{
+.member-img{
     width: 154px;
     border-radius: 5px; /*Để bo góc tròn*/
 }
 /* End CSS About Section  */
 
 /* Begin CSS Tour Section  */
-#content .tour-section{
+.tour-section{
     background-color: black;
 
 }
@@ -256,17 +294,11 @@ html{
     line-height: 24px;
     border-radius: 50%;
 }
+
 .location-list{
     margin-top: 32px;
-    margin-left: -8px;
-    margin-right: -8px;;
     overflow: hidden;
     font-size: 15px;
-}
-.location-area{
-    float: left;
-    width: calc(100%/3);
-    padding: 0 8px;
 }
 
 .location-heading{
@@ -298,30 +330,87 @@ html{
     line-height: 1.5;
 }
 
-.location-buy-btn{
-    display: inline-block;
-    color: white;
-    background-color: black;
-    text-decoration: none; /*Bỏ gạch chân*/
-    padding: 8px 16px;
-    margin-bottom: 16px;
-    margin-top: 15px;;
+
+
+.btn:hover{
+    background-color: #ccc;
+}
+/* End CSS Tour Section  */
+
+
+/* Begin CSS Contact Section  */
+.contact-content{
+    margin-top: 48px;
+    padding: 64px 16px;
 }
 
-.location-buy-btn:hover{
+.contact-infor{
+    color: black;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-infor i[class*=ti-] {
+     width: 30px;
+     display: inline-block;
+}
+
+.contact-form{
+    font-size: 15px;
+}
+
+.contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+
+.btn:hover{
+    cursor: pointer;
+    color: #000;
     background-color: #ccc;
 }
 
-/* End CSS Tour Section  */
-
-/* Begin CSS Contact Section  */
+.map-section img{
+    width: 100%;
+}
 
 /* End CSS Contact Section  */
 
-/* CSS Footer */
-#footer {
 
+/* CSS Footer */
+#footer{
+    padding: 64px 16px;
+    text-align: center;
 }
+
+#footer .social-list{
+    font-size: 24px;
+}
+
+#footer .social-list a{
+    color: black;
+    text-decoration: none;
+}
+
+#footer .social-list a:hover{
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+#footer .copyright{
+    font-size: 15px;
+    margin-top: 15px;
+    color: black;
+}
+
+#footer .copyright a{
+    color: black;
+}
+
 
 /* Begin CSS modal */
 .modal.open{
@@ -346,6 +435,9 @@ html{
     max-width: calc(100% - 32px);
     min-height: 200px;
     position: relative;
+    /* Thêm animation Js Buy-Ticket */
+    /* trượt trượt */
+    animation: modalFadeIn ease 0.5s;
 }
 
 .modal-header{
@@ -444,5 +536,16 @@ html{
     cursor: pointer;
 }
 
-
 /* End CSS modal */
+
+
+/* Begin Js Buy-Ticket */
+@keyframes modalFadeIn{
+    from{
+        transform: translateY(-100px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+/* End Js Buy-Ticket */
