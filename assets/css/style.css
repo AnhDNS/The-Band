@@ -6,6 +6,7 @@
     font-size: 15px;
 }
 html{
+    scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;  /*Chỉnh font chữ */
 }
 
@@ -90,6 +91,12 @@ Làm từ trên xuống dưới
     right: 0;
 }
 
+#header .menu-mobile-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 #nav,.subnav{
     list-style-type: none;
 }
@@ -105,7 +112,7 @@ Làm từ trên xuống dưới
 
 
 
-#nav  li  a{
+#nav li a{
     text-decoration: none;
     line-height: 46px;
     padding: 0 24px;
@@ -147,6 +154,7 @@ Làm từ trên xuống dưới
 }
 
 /* Css Search Botton */
+#header .menu-mobile-btn,
 #header .nav-search-btn{
     line-height: 46px;
     float: right;
@@ -158,6 +166,11 @@ Làm từ trên xuống dưới
 #header .nav-search-btn:hover{
     cursor: pointer;
     background-color: red;
+}
+
+#header .menu-mobile-btn:hover{
+    background-color: #ccc;
+    color: black;
 }
 /* CSS Slider */
 #slider {
@@ -204,10 +217,13 @@ Làm từ trên xuống dưới
 /* Begin CSS About Section  */
 #content .content-section{
     width: 800px;
+    max-width: 100%;
     padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.4;  /* Chỉnh độ cao 1 dòng*/
+    line-height: 1.4; /* Chỉnh độ cao 1 dòng*/
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading{

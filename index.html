@@ -6,27 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Brand</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    
 </head>
 <body>
     <div id="main">
         <div id="header">
             <!-- Begin-Nav -->
             <ul id="nav">
-                <li><a href="">Home</a></li>
-                <li><a href="">Band</a></li>
-                <li><a href="">Tour</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#Band">Band</a></li>
+                <li><a href="#Tour">Tour</a></li>
+                <li><a href="#Contact">Contact</a></li>
                 <li>
-                    <a href="">
+                    <a href="#">
                         More
                         <!-- Thêm Icont sau chữ More -->
                         <i class="nav-arrow-down ti-angle-down"></i>
                     </a>
                     <ul class="subnav">
-                        <li><a href="">Merchandise</a></li>
-                        <li><a href="">Extras</a></li>
-                        <li><a href="">Media</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
                     </ul>
                 </li>
                 <li><i class="ti-search"></i></li>
@@ -35,6 +37,9 @@
             <!-- Begin-Search -->
             <div class="nav-search-btn">
                 <i class="nav-search-btn ti-search"></i>
+            </div>
+            <div id="mobile-menu" class="menu-mobile-btn ">
+                <i class="ti-menu"></i>
             </div>
             <!-- End-Search -->
         </div>
@@ -49,7 +54,7 @@
         <div id="content">
             <!-- About Section -->
             <div class="content-section">
-                <h2 class="section-heading">THE BAND</h2>
+                <h2 id="Band" class="section-heading">THE BAND</h2>
                 <p class="section-sub-heading">We love music</p>
                 <p class="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <div class="row member-list">
@@ -72,7 +77,7 @@
             </div>
 
             <!-- Tour Section -->
-            <div class="tour-section">
+            <div id="Tour" class="tour-section">
                 <div class="content-section">
                     <h2 class="section-heading">TOUR DATES</h2>
                     <p class="section-sub-heading">Remember to book your tickets!</p>
@@ -118,7 +123,7 @@
             </div>
 
             <!-- Contact Section -->
-            <div class="contact-section">
+            <div id="Contact" class="contact-section">
                 <div class="content-section">
                     <h2 class="section-heading">CONTACT</h2>
                     <p class="section-sub-heading">Fan? Drop a note!</p>
@@ -215,6 +220,35 @@
 
     <!-- Js -->
     <script>
+
+        // Đóng mở Menu
+        // Begin JS header
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHight = header.clientHeight;
+
+        mobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === headerHight;
+            if (isClosed) {
+                header.style.height = 'auto'
+            } 
+            else {
+                header.style.height = null
+            }
+        }
+
+        // Tự động đóng Menu khi đã chọn xong 
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            menuItem.onclick = function() {
+                header.style.height = null;
+            }
+        }
+    
+        
+
+        // Begin JS Buy Tickets
         const buyBtns = document.querySelectorAll('.js-buy-ticket')
         const modal = document.querySelector('.js-modal')
         const modalClose = document.querySelector('.js-modal-close')
@@ -244,6 +278,7 @@
         modalcontainer.addEventListener('click', function() {
             event.stopPropagation()
         })
+        // End JS Buy Tickets
 
     </script>
 </body>
