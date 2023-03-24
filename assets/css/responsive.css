@@ -14,8 +14,30 @@
 
 /* Mobile */
 @media ( max-width:46.1875em) {
+
+    .s-col-full,
+    .s-full-width{
+        width: 100%;
+    }
+
+    .text-center{
+        text-align: center;
+    }
+
+    #header{
+        overflow: hidden;
+    }
+
+    #header .nav-search-btn{
+        display: none;
+    }
+
     #nav{
         display: block;
+    }
+
+    #nav li a{
+        padding: 1px 24px;
     }
 
     #nav > li{
@@ -26,12 +48,26 @@
         display: inline-block;
     }
 
-    #header{
-        overflow: hidden;
+    
+
+    #nav .subnav{
+        position: initial; /*initial là Giá trị mặc định*/
+        background-color: #333;
     }
 
-    #header .nav-search-btn{
-        display: none;
+    #nav .subnav a{
+        color: white;
+        padding: 5px 41px;
+    }
+
+
+    #content .member-item-mobile{
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .member-img{
+        width: 65%;
     }
 
 }

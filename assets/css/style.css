@@ -248,7 +248,7 @@ Làm từ trên xuống dưới
 }
 
 .member-list{
-    margin-top: 48px;
+    margin-top: 32px;
     overflow: hidden; /*Khắc phục tình trạng mất khoảng cách của dùng float*/
 }
 
